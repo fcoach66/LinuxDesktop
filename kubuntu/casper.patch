@@ -1,0 +1,28 @@
+--- /usr/share/casper/casper-update-initramfs.orig	2014-04-09 18:33:59.000000000 +0000
++++ /usr/share/casper/casper-update-initramfs	2015-03-17 12:21:45.291362912 +0000
+@@ -1,9 +1,12 @@
+ #! /bin/sh
+ set -e
+ 
+-if [ -f /cdrom/casper/vmlinuz ]; then
++vmlinuz=vmlinuz
++[ -e /cdrom/casper/vmlinuz.efi ] && vmlinuz=vmlinuz.efi
++
++if [ -f "/cdrom/casper/$vmlinuz" ]; then
+     # If /cdrom is mounted but not writable, just exit
+-    : >> "/cdrom/casper/vmlinuz" > /dev/null 2>&1 || exit 0
++    : >> "/cdrom/casper/$vmlinuz" > /dev/null 2>&1 || exit 0
+ 
+     # If UBIQUITY_ONLY is set in the environment, also exit
+     [ -n "$UBIQUITY_ONLY" ] && exit 0
+@@ -28,7 +31,7 @@
+     fi
+ fi
+ if [ -e "$bootdir/vmlinuz" ]; then
+-    cp "$bootdir/vmlinuz" /cdrom/casper/vmlinuz.new
+-    mv /cdrom/casper/vmlinuz.new /cdrom/casper/vmlinuz
++    cp "$bootdir/vmlinuz" "/cdrom/casper/$vmlinuz.new"
++    mv "/cdrom/casper/$vmlinuz.new" "/cdrom/casper/$vmlinuz"
+ fi
+ exit 0
+ 

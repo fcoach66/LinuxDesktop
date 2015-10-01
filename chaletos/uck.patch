@@ -1,0 +1,42 @@
+diff -Nurpd uck-code-orig/libraries/customization-profiles/localized_cd/customize_iso uck-code-efi/libraries/customization-profiles/localized_cd/customize_iso
+--- uck-code-orig/libraries/customization-profiles/localized_cd/customize_iso	2013-07-08 22:49:51.415267826 +0200
++++ uck-code-efi/libraries/customization-profiles/localized_cd/customize_iso	2013-07-14 16:07:55.544942933 +0200
+@@ -127,19 +127,28 @@ popd >/dev/null
+ 
+ # Copy kernel and initrd, in case it was changed during installation
+ VMLINUZ=$(get_latest_kernel)
+-if [ "$VMLINUZ" != "" ]
++VMLINUZ_EFI="$VMLINUZ".efi.signed
++INITRD="$REMASTER_DIR"/boot/initrd.img-$(echo `basename $VMLINUZ` | cut -d'-' -f 2-)
++if [ -e "$INITRD" ]
+ then
+-	INITRD="$REMASTER_DIR"/boot/initrd.img-$(echo `basename $VMLINUZ` | cut -d'-' -f 2-)
+-	if [ -e "$VMLINUZ" -a -e "$INITRD" ]
++
++	if [ -e "$ISO_REMASTER_DIR/casper/vmlinuz" -a -e "$VMLINUZ" ]
+ 	then
+-		echo "Updating kernel:"
+-		echo "	kernel=$VMLINUZ"
+-		echo "	initrd=$INITRD"
++		echo "Updating kernel $VMLINUZ to $ISO_REMASTER_DIR/casper/vmlinuz"
+ 		cp -f "$VMLINUZ" "$ISO_REMASTER_DIR/casper/vmlinuz"
+-		cp -f "$INITRD" "$ISO_REMASTER_DIR/casper/initrd.gz"
+-	else
+-		echo "Not updating kernel as initrd not present"
+ 	fi
++
++	if [ -e "$ISO_REMASTER_DIR/casper/vmlinuz.efi" -a -e "$VMLINUZ_EFI" ]
++	then
++		echo "Updating kernel $VMLINUZ_EFI to $ISO_REMASTER_DIR/casper/vmlinuz.efi"
++		cp -f "$VMLINUZ_EFI" "$ISO_REMASTER_DIR/casper/vmlinuz.efi"
++	fi
++
++	echo "Updating initrd $INITRD to $ISO_REMASTER_DIR/casper/initrd.gz"
++	cp -f "$INITRD" "$ISO_REMASTER_DIR/casper/initrd.gz"
++
++else
++	echo "Not updating kernel as initrd not present"
+ fi
+ 
+ # Misc fixup for Karmic
+ 

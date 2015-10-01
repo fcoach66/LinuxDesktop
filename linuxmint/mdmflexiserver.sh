@@ -1,0 +1,1 @@
+mdmflexiserver --command="UPDATE_CONFIG daemon/DisplayLastLogin=false"

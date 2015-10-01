@@ -1,0 +1,43 @@
+
+Log started: 2015-02-18  10:27:45
+dpkg: nvidia-libopencl1-331: dependency problems, but removing anyway as you requested:
+ nvidia-opencl-icd-331 depends on ocl-icd-libopencl1 | nvidia-libopencl1-331; however:
+  Package ocl-icd-libopencl1:amd64 is not installed.
+  Package nvidia-libopencl1-331 is to be removed.
+
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 162762 files and directories currently installed.)
+Removing nvidia-libopencl1-331 (331.113-0ubuntu0.0.4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
+Selecting previously unselected package ocl-icd-libopencl1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 162754 files and directories currently installed.)
+Preparing to unpack .../ocl-icd-libopencl1_2.1.3-4_amd64.deb ...
+Unpacking ocl-icd-libopencl1:amd64 (2.1.3-4) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for doc-base (0.10.5) ...
+Elaborazione 1 file doc-base aggiunto...
+Registrazione dei documenti con  scrollkeeper...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 162767 files and directories currently installed.)
+Removing nvidia-331-uvm (331.113-0ubuntu0.0.4) ...
+Removing all DKMS Modules
+Done.
+Removing nvidia-331 (331.113-0ubuntu0.0.4) ...
+Removing all DKMS Modules
+Done.
+update-alternatives: using /usr/lib/nvidia-331-prime/ld.so.conf to provide /etc/ld.so.conf.d/x86_64-linux-gnu_GL.conf (x86_64-linux-gnu_gl_conf) in auto mode
+update-alternatives: using /usr/lib/nvidia-331-prime/alt_ld.so.conf to provide /etc/ld.so.conf.d/i386-linux-gnu_GL.conf (i386-linux-gnu_gl_conf) in auto mode
+update-alternatives: using /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf to provide /etc/ld.so.conf.d/x86_64-linux-gnu_GL.conf (x86_64-linux-gnu_gl_conf) in auto mode
+update-alternatives: using /usr/lib/i386-linux-gnu/mesa/ld.so.conf to provide /etc/ld.so.conf.d/i386-linux-gnu_GL.conf (i386-linux-gnu_gl_conf) in auto mode
+INFO:Disable nvidia-331
+DEBUG:Parsing /usr/share/ubuntu-drivers-common/quirks/lenovo_thinkpad
+DEBUG:Parsing /usr/share/ubuntu-drivers-common/quirks/dell_latitude
+DEBUG:Parsing /usr/share/ubuntu-drivers-common/quirks/put_your_quirks_here
+nvidia-persistenced stop/waiting
+update-initramfs: deferring update (trigger activated)
+Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for initramfs-tools (0.103ubuntu4.2) ...
+update-initramfs: Generating /boot/initrd.img-3.13.0-37-generic
+Warning: No support for locale: it_IT.utf8
+Setting up ocl-icd-libopencl1:amd64 (2.1.3-4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
+Log ended: 2015-02-18  10:28:25

@@ -1,0 +1,7 @@
+Name: Mkhomedir
+Default: yes
+Priority: 0
+Session-Interactive-Only: yes
+Session-Type: Additional
+Session:
+	optional	pam_mkhomedir.so umask=0022 skel=/etc/skel

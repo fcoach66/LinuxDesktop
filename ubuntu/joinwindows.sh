@@ -1,0 +1,17 @@
+apt-get install krb5-user libnss-winbind libpam-winbind ssh vim
+mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
+cp smb.conf /etc/samba/
+mv /etc/krb5.conf /etc/krb5.conf.orig
+cp krb5.conf /etc/
+kinit sysadmin@SINFOCOM.IT
+net ads join sinfocom.it -U sysadmin
+cp nsswitch.conf /etc/
+
+echo allow-guest=false >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
+echo greeter-show-manual-login=true >> /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
+
+echo "%Domain\ Admins ALL=(ALL) ALL" >> /etc/sudoers
+echo "%Linux\ Admins ALL=(ALL) ALL" >> /etc/sudoers
+
+cp mkhomedir /usr/share/pam-configs/
+pam-auth-update
