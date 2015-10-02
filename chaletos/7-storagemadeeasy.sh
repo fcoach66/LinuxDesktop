@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gdebi -n storagemadeeasy_4.1.3.deb
+gdebi -n storagemadeeasy_4.3.3.deb
 
 

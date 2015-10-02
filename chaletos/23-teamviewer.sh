@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gdebi -n teamviewer_10.0.37742_i386.deb
+gdebi -n teamviewer_10.0.46203_i386.deb
 
 

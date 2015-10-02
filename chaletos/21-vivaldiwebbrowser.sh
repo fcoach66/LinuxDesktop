@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gdebi -n vivaldi-preview_1.0.118.19-1_amd64.deb
+gdebi -n vivaldi_TP4.1.0.219.50-1_amd64.deb
 
 
